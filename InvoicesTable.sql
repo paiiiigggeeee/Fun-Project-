@@ -1,0 +1,18 @@
+USE TPF
+
+DROP TABLE IF EXISTS Invoices;
+CREATE TABLE Invoices(
+  InvoiceID INTEGER NOT NULL IDENTITY, 
+  ProductID INTEGER ,
+  ClientID INTEGER , 
+  EmployeeID INTEGER ,
+  InvoiceDate DateTime ,
+  InvoiceTotal VARCHAR(50),
+  PRIMARY KEY (InvoiceID)
+
+  );
+
+SET IMPLICIT_TRANSACTIONS ON
+INSERT INTO Invoices VALUES  (1, 1, 1, '09-10-2021', '$200');
+INSERT INTO Invoices VALUES (2, 2, 2, '09-20-2021', '$100');
+COMMIT;
